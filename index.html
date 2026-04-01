@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoT Character Database</title>
+    <meta name="description" content="Browse characters from Game of Thrones. View their house, title and more.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>⚔️ GoT Character Database</h1>
+        <p>Browse characters from the world of Game of Thrones</p>
+    </header>
+
+    <!-- Loading Spinner -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Loading characters...</p>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error-msg" style="display:none;">
+        <p>⚠️ Something went wrong. Please try again later.</p>
+        <button onclick="fetchCharacters()">Retry</button>
+    </div>
+
+    <!-- Characters Grid -->
+    <main id="characters-grid"></main>
+
+    <!-- Modal for character details -->
+    <div id="modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeModal(event)">&times;</span>
+            <img id="modal-img" src="" alt="Character image">
+            <h2 id="modal-name"></h2>
+            <p id="modal-title"></p>
+            <p id="modal-family"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Data from <a href="https://thronesapi.com" target="_blank">ThronesAPI</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
