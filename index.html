@@ -15,6 +15,26 @@
         <p>Browse characters from the world of Game of Thrones</p>
     </header>
 
+    <!-- Controls bar -->
+    <div id="controls">
+        <input type="text" id="search-box" placeholder="Search character name..." oninput="applyFilters()">
+
+        <select id="house-filter" onchange="applyFilters()">
+            <option value="all">All Houses</option>
+        </select>
+
+        <select id="sort-option" onchange="applyFilters()">
+            <option value="default">Default Order</option>
+            <option value="a-z">Name A → Z</option>
+            <option value="z-a">Name Z → A</option>
+        </select>
+
+        <button id="theme-btn" onclick="toggleTheme()">☀️ Light Mode</button>
+    </div>
+
+    <!-- No results message -->
+    <p id="no-results" style="display:none;">No characters found.</p>
+
     <!-- Loading Spinner -->
     <div id="loader">
         <div class="spinner"></div>

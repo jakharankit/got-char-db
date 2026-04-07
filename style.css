@@ -31,6 +31,79 @@ header p {
     color: #aaa;
 }
 
+/* ---- Controls Bar ---- */
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #16213e;
+    border-bottom: 1px solid #2a2a4a;
+}
+
+#search-box {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    border: 1px solid #2a2a4a;
+    border-radius: 4px;
+    background-color: #1a1a2e;
+    color: #eee;
+    width: 250px;
+    font-family: Georgia, serif;
+}
+
+#search-box::placeholder {
+    color: #777;
+}
+
+#search-box:focus {
+    outline: none;
+    border-color: #c9a84c;
+}
+
+#house-filter,
+#sort-option {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: 1px solid #2a2a4a;
+    border-radius: 4px;
+    background-color: #1a1a2e;
+    color: #eee;
+    font-family: Georgia, serif;
+    cursor: pointer;
+}
+
+#house-filter:focus,
+#sort-option:focus {
+    outline: none;
+    border-color: #c9a84c;
+}
+
+#theme-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border: 1px solid #c9a84c;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #c9a84c;
+    cursor: pointer;
+    font-family: Georgia, serif;
+}
+
+#theme-btn:hover {
+    background-color: #c9a84c;
+    color: #1a1a2e;
+}
+
+/* ---- No Results ---- */
+#no-results {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-size: 1.1rem;
+}
+
 /* ---- Loading Spinner ---- */
 #loader {
     text-align: center;
@@ -210,12 +283,112 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* ============================================
+   LIGHT MODE - overrides dark colors
+   ============================================ */
+body.light-mode {
+    background-color: #f5f0e8;
+    color: #333;
+}
+
+body.light-mode header {
+    background-color: #fff;
+    border-bottom-color: #b8963e;
+}
+
+body.light-mode header p {
+    color: #666;
+}
+
+body.light-mode #controls {
+    background-color: #fff;
+    border-bottom-color: #ddd;
+}
+
+body.light-mode #search-box {
+    background-color: #f5f0e8;
+    color: #333;
+    border-color: #ccc;
+}
+
+body.light-mode #search-box::placeholder {
+    color: #999;
+}
+
+body.light-mode #house-filter,
+body.light-mode #sort-option {
+    background-color: #f5f0e8;
+    color: #333;
+    border-color: #ccc;
+}
+
+body.light-mode #theme-btn {
+    color: #8b7532;
+    border-color: #8b7532;
+}
+
+body.light-mode #theme-btn:hover {
+    background-color: #8b7532;
+    color: #fff;
+}
+
+body.light-mode .card {
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+body.light-mode .card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .card-info h3 {
+    color: #8b7532;
+}
+
+body.light-mode .card-info p {
+    color: #666;
+}
+
+body.light-mode .modal-box {
+    background-color: #fff;
+    border-color: #b8963e;
+}
+
+body.light-mode .modal-box h2 {
+    color: #8b7532;
+}
+
+body.light-mode .modal-box p {
+    color: #555;
+}
+
+body.light-mode .close-btn {
+    color: #999;
+}
+
+body.light-mode footer {
+    border-top-color: #ddd;
+    color: #999;
+}
+
+body.light-mode #no-results {
+    color: #666;
+}
+
 /* ---- Responsive ---- */
 
 /* tablets */
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.6rem;
+    }
+
+    #controls {
+        padding: 15px;
+    }
+
+    #search-box {
+        width: 100%;
     }
 
     #characters-grid {
@@ -233,6 +406,21 @@ footer a:hover {
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.3rem;
+    }
+
+    #controls {
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    #search-box {
+        width: 100%;
+    }
+
+    #house-filter,
+    #sort-option,
+    #theme-btn {
+        width: 100%;
     }
 
     #characters-grid {
